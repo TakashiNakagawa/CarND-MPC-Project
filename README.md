@@ -18,10 +18,10 @@ I started N = 25 and dt = 0.05 which was same as lessons. Increasing N made driv
 Total time was 1 seconds.
 
 # Polynomial Fitting and MPC Preprocessing
-I transformed the waypoints from the simulator to the car coordinate system. Then a third degree polynominal was fitted to the transformed waypoints.
+I transformed the waypoints from the simulator to the car coordinate system. Then a third-degree polynomial was fitted to the transformed waypoints.
 
 # Model Predictive COntrol with Latency
-I added a latency of 100ms before sending actuations to the simulator to simulate real world conditions.
+I added a latency of 100ms before sending actuations to the simulator to simulate real-world conditions.
 
 ## Dependencies
 
