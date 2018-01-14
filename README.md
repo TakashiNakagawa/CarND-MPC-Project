@@ -3,6 +3,26 @@ Self-Driving Car Engineer Nanodegree Program
 
 ---
 
+# The Model
+The model is expressed by the following equations:
+
+      x_[t+1] = x[t] + v[t] * cos(psi[t]) * dt
+      y_[t+1] = y[t] + v[t] * sin(psi[t]) * dt
+      psi_[t+1] = psi[t] + v[t] * delta[t] / Lf * dt
+      v_[t+1] = v[t] + a[t] * dt
+      cte[t+1] = f(x[t]) - y[t] + v[t] * sin(epsi[t]) * dt
+      epsi[t+1] = psi[t] - psides[t] + v[t] * delta[t] / Lf * dt
+
+# Timesetp Length and Elapsed Duration(N & dt)
+I started N = 25 and dt = 0.05 which was same as lessons. Increasing N made driving worse, so I decrease N and finally I set N = 20 and dt = 0.05.
+Total time was 1 seconds.
+
+# Polynomial Fitting and MPC Preprocessing
+I transformed the waypoints from the simulator to the car coordinate system. Then a third degree polynominal was fitted to the transformed waypoints.
+
+# Model Predictive COntrol with Latency
+I added a latency of 100ms before sending actuations to the simulator to simulate real world conditions.
+
 ## Dependencies
 
 * cmake >= 3.5
